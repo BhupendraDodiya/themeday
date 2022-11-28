@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title></title>
+	<script>
+		function day()
+		{
+			setInterval(dayTime,1000)
+			function dayTime()
+			{
+				var d=new Date();
+				var time=d.toLocaleTimeString();
+				var hours=d.getHours();
+				document.getElementsByTagName('h1')[0].innerText=time;
+				if(hours>=6 && hours<=11)
+				{
+					document.getElementsByTagName('h1')[1].innerText="GOOD MORNING";
+					document.getElementById('day-images').src="D:/day_theme/IMAGES/goodmorning.gif";
+					document.getElementsByTagName('h1')[1].style.color="darkorange";
+				}
+				else if(hours>=12 && hours<=16)
+				{
+					document.getElementsByTagName('h1')[1].innerHTML="GOOD AFTERNOON";
+					document.getElementById('day-images').src="D:/day_theme/IMAGES/goodafternoon.gif";
+					document.getElementsByTagName('h1')[1].style.color="red";
+				}
+				else if(hours>=17 && hours<=21)
+				{
+					document.getElementsByTagName('h1')[1].innerHTML="GOOD EVENING";
+					document.getElementById('day-images').src="D:/day_theme/IMAGES/goodevening.gif";
+					document.getElementsByTagName('h1')[1].style.color="green";
+				}
+				else 
+				{
+					document.getElementsByTagName('h1')[1].innerHTML="GOOD NIGHT";
+					document.getElementById('day-images').src="D:/day_theme/IMAGES/goodnight.gif";
+					document.getElementsByTagName('h1')[1].style.color="black";
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body onload="day()">
+<center>
+	<h1></h1>
+	<h1></h1>
+	<img id="day-images" src="" style="width: 50%; height: 70%;" >
+</center>
+</body>
+</html>
